@@ -1,0 +1,9 @@
+# Virtual environment directory
+my_chatbot_env/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# VS Code settings
+.vscode/
