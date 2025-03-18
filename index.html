@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="chat-window">
+        <button class="close">X</button>
+        <div class="chat">
+            <div class="model">
+                <p>Hi! I am Gemini, your AI Career Assistant. How may I help you?</p>
+            </div>
+        </div>
+        <div class="roadmap-button">
+            <button id="roadmap-trigger">Generate Career Roadmap</button>
+            <button id="quiz-trigger">Take Skill Assessment Quiz</button>
+
+        </div>
+        <div class="input-area">
+          <input type="text" placeholder="Ask me anything...">
+          <button> <img src="send-icon.png" alt="send icon"></button>  
+        </div>
+    </section>
+    <script type="module" src="main.js"></script>
+    <!-- Career Roadmap Popup -->
+<div id="roadmap-popup">
+    <div id="roadmap-content"></div>
+</div>
+<!-- Skill Assessment Quiz Popup -->
+<div id="quiz-popup">
+    <div id="quiz-content"></div>
+</div>
+
+</body>
+</html>

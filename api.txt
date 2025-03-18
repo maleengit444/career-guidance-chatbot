@@ -1,0 +1,55 @@
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+
+const genAI = new GoogleGenerativeAI("AIzaSyCnFyEGC_lrMvhpMvQ1XsbrUgCJNkOGLDI");
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+const prompt = "advice on career based on the marjket and demand";
+
+const result = await model.generateContent(prompt);
+console.log(result.response.text());
+
+//html code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="chat-window">
+        <button class="close">X</button>
+        <div class="chat">
+            <div class="model">
+                <p>Hi! I am Gemini, your AI Assistant. How may i help you?</p>
+            </div>
+            
+        </div>
+        <div class="input-area">
+          <input type="text" placeholder="Ask me anything...">
+          <button> <img src="send-icon.png" alt="send icon"></button>  
+        </div>
+
+    </section>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
+
+//initial javascriptcode
+
+
+function sendMessage() {
+    const userMessage = document.querySelector(".chat-window input").value;
+    if (userMessage.length){ 
+        document.querySelector(".chat-window input").value = "";
+        document.querySelector(".chat-window .chat").insertAdjacentHTML("beforeend", ` <div class="user">
+                <p>${userMessage}</p>
+            </div>`)
+    }
+}
+const userMessage = document.querySelector(".chat-window .input-area button").addEventListener("click", ()=> sendMessage());

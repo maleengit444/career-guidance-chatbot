@@ -1,0 +1,321 @@
+:root{
+    --grey: #f5f5f5;
+    --blue: #3d88f9;
+    --soft-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    --typing-color: #e0e0e0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+}
+
+.chat-window{
+    * {
+        font-family: "Raleway", sans-serif;
+    }
+    box-shadow: var(--soft-shadow);
+    border-radius: 20px;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    height: 600px;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    overflow: hidden;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.close{
+    border: none;
+    padding: 8px 0;
+    background-color: #1a1a1a;
+    color: whitesmoke;
+    border-radius: 20px 20px 0 0;
+    cursor: pointer;
+}
+
+.chat{
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat p{
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin: 8px 0;
+    font-size: 15px;
+    line-height: 1.4;
+    transition: all 0.3s;
+}
+
+.chat .model p{
+    background-color: var(--grey);
+}
+
+.chat .user p{
+    background-color: var(--blue);
+    color: white;
+    text-align: right;
+}
+
+.input-area{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    border-top: 1px solid lightgray;
+}
+
+.input-area input{
+    height: 40px;
+    flex: 1;
+    border: none;
+    background-color: var(--grey);
+    border-radius: 20px;
+    padding: 0 15px;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.input-area input:focus{
+    background-color: white;
+}
+
+.input-area button{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 10px;
+    background-color: var(--blue);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.input-area button img{
+    width: 18px;
+    height: 18px;
+}
+
+.typing-indicator {
+    background-color: var(--typing-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 5px 0;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+/* Roadmap Button Styling */
+.roadmap-button {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.roadmap-button button {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.roadmap-button button:hover {
+    background-color: #2b6edb;
+}
+/* Career Roadmap Popup Styling */
+#roadmap-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#roadmap-content {
+    background-color: white;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+    overflow-y: auto;
+    max-height: 80%;
+}
+
+#roadmap-content h2 {
+    text-align: center;
+    color: var(--blue);
+}
+
+#roadmap-content p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+#roadmap-close {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    transition: background-color 0.3s;
+}
+
+#roadmap-close:hover {
+    background-color: #2b6edb;
+}
+
+/* Animation for popup appearance */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+/* Skill Assessment Quiz Button Styling */
+#quiz-trigger {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#quiz-trigger:hover {
+    background-color: #2b6edb;
+}
+
+/* Quiz Popup Styling */
+#quiz-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#quiz-content {
+    background-color: white;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+    overflow-y: auto;
+    max-height: 80%;
+}
+
+#quiz-content h2 {
+    text-align: center;
+    color: var(--blue);
+}
+
+#quiz-content p, #quiz-content label {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+#quiz-close {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    transition: background-color 0.3s;
+}
+
+#quiz-close:hover {
+    background-color: #2b6edb;
+}
+/* Enhanced Message Animation */
+@keyframes slideInDelayed {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.model p, .user p {
+    animation: slideInDelayed 0.5s ease-out;
+}
+
+/* Subtle Hint Styling */
+.hint-text {
+    font-size: 14px;
+    color: gray;
+    padding: 5px;
+    text-align: center;
+    margin-top: 5px;
+}
+/* Consistent Popup Styling */
+#roadmap-content, #quiz-content {
+    font-family: "Raleway", sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+}
+/* Suggested Topics/Questions Styling */
+.suggestion-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.suggestion-buttons button {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.suggestion-buttons button:hover {
+    background-color: #2b6edb;
+}
+
